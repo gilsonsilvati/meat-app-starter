@@ -467,6 +467,22 @@
         }
       ],
       "id": 6
+    },
+    {
+      "name": "Tarso",
+      "email": "t@t.com",
+      "emailConfirmation": "t@t.com",
+      "address": "Rua Pontes",
+      "number": "200",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 7
     }
   ]
 }
