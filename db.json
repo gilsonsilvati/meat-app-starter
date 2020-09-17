@@ -434,6 +434,23 @@
         }
       ],
       "id": 4
+    },
+    {
+      "address": "Rua teste",
+      "number": "12",
+      "optionalAddress": "",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        }
+      ],
+      "id": 5
     }
   ]
 }
