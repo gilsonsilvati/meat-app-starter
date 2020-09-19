@@ -39,9 +39,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [
-    {provide: LOCALE_ID, useValue: 'pt-BR'}
-  ],
+  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
