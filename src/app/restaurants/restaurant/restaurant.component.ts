@@ -7,7 +7,7 @@ import { Restaurant } from './restaurant.model';
     selector: 'mt-restaurant',
     templateUrl: './restaurant.component.html',
     animations: [
-        trigger('restaurant-appeared', [
+        trigger('restaurantAppeared', [
             state('ready', style({ opacity: 1 })),
             transition('void => ready', [
                 style({ opacity: 0, transform: 'translate(-30px, -10px)' }),
