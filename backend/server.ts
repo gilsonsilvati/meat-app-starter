@@ -5,6 +5,7 @@ import * as https from 'https';
 import { Express } from 'express';
 
 import { handleAuthentication } from './auth';
+import { handleAuthorization } from './authz';
 
 const server: Express = jsonServer.create();
 const router = jsonServer.router('db.json');
@@ -19,6 +20,8 @@ server.use(jsonServer.bodyParser);
 
 // middleware para login
 server.post('/login', handleAuthentication);
+
+server.use('/orders', handleAuthorization);
 
 // Use default router
 server.use(router);
