@@ -1,15 +1,17 @@
-import { Routes } from "@angular/router";
+import { Routes } from '@angular/router';
 
-import { HomeComponent } from "./home/home.component";
-import { RestaurantsComponent } from "./restaurants/restaurants.component";
-import { RestaurantDetailComponent } from "./restaurant-detail/restaurant-detail.component";
-import { MenuComponent } from "./restaurant-detail/menu/menu.component";
-import { ReviewsComponent } from "./restaurant-detail/reviews/reviews.component";
-import { OrderSummaryComponent } from "./order-summary/order-summary.component";
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './security/login/login.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
+import { MenuComponent } from './restaurant-detail/menu/menu.component';
+import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 export const ROUTES: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'restaurants', component: RestaurantsComponent},
   {path: 'restaurants/:id', component: RestaurantDetailComponent,
     children: [
