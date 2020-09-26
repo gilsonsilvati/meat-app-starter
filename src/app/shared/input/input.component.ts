@@ -2,38 +2,41 @@ import { AfterContentInit, Component, ContentChild, Input, OnInit } from '@angul
 import { FormControlName, NgModel } from '@angular/forms';
 
 @Component({
-  selector: 'mt-input-container',
-  templateUrl: './input.component.html'
+    selector: 'mt-input-container',
+    templateUrl: './input.component.html'
 })
 export class InputComponent implements OnInit, AfterContentInit {
 
-  @Input() label: string;
-  @Input() errorMessage: string;
+    @Input() label: string;
+    @Input() errorMessage: string;
 
-  input: any;
+    // tslint:disable-next-line: no-inferrable-types
+    @Input() showTip: boolean = true;
 
-  @ContentChild(NgModel) model: NgModel;
-  @ContentChild(FormControlName) control: FormControlName;
+    input: any;
 
-  constructor() { }
-  
-  ngOnInit() {
-  }
+    @ContentChild(NgModel) model: NgModel;
+    @ContentChild(FormControlName) control: FormControlName;
 
-  ngAfterContentInit(): void {
-    this.input = this.model || this.control;
+    constructor() { }
 
-    if (this.input === undefined) {
-      throw new Error('Esse componente precisa ser usado com uma diretiva ngModel ou formControlName');
+    ngOnInit() {
     }
-  }
 
-  hasSuccess(): boolean {
-    return this.input.valid && (this.input.dirty || this.input.touched);
-  }
+    ngAfterContentInit(): void {
+        this.input = this.model || this.control;
 
-  hasError(): boolean {
-    return this.input.invalid && (this.input.dirty || this.input.touched);
-  }
+        if (this.input === undefined) {
+            throw new Error('Esse componente precisa ser usado com uma diretiva ngModel ou formControlName');
+        }
+    }
+
+    hasSuccess(): boolean {
+        return this.input.valid && (this.input.dirty || this.input.touched);
+    }
+
+    hasError(): boolean {
+        return this.input.invalid && (this.input.dirty || this.input.touched);
+    }
 
 }
