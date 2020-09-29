@@ -30,8 +30,8 @@ import { NotificationService } from '../notification.service';
 })
 export class SnackbarComponent implements OnInit {
 
-    message: string = 'Hello there!';
-    snackVisibility: string = 'hidden';
+    message = 'Hello there!';
+    snackVisibility = 'hidden';
 
     constructor(private notificationService: NotificationService) { }
 
@@ -41,7 +41,7 @@ export class SnackbarComponent implements OnInit {
                 this.message = message;
                 this.snackVisibility = 'visible';
             })
-            .switchMap(() => Observable.timer(2000))
+            .switchMap(() => Observable.timer(3000))
             .subscribe(() => this.snackVisibility = 'hidden');
     }
 
